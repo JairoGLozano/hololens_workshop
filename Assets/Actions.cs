@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Actions : MonoBehaviour {
 
+    public GameObject flamesParticleEffect;
+    private bool flamesActivated = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +19,32 @@ public class Actions : MonoBehaviour {
 
     public void FireAction()
     {
-        Debug.Log("Fire");
+        Debug.Log("Fire Action");
+        if (flamesActivated)
+        {
+            flamesParticleEffect.SetActive(false);
+            flamesActivated = false;
+        }
+        else
+        {
+            flamesParticleEffect.SetActive(true);
+            flamesActivated = true;
+        }
     }
 
+    
     public void DracarysAction()
     {
-        Debug.Log("Dracarys");
-    }
+        Debug.Log("Dracarys Action");
+        if (flamesActivated)
+        {
+            flamesParticleEffect.SetActive(false);
+            flamesActivated = false;
+        }
+        else
+        {
+            flamesParticleEffect.SetActive(true);
+            flamesActivated = true;
+        }
+    }// end of DracarysAction
 }

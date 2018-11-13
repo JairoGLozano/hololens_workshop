@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d4995c7cd67794da8e1f1106d40f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flamesParticleEffect: {fileID: 2009548255}
 --- !u!114 &1057394395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keywords:
-  - Keyword: Fire
+  - Keyword: Red
     Response:
       m_PersistentCalls:
         m_Calls:
@@ -302,21 +303,8 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  IsGlobalListener: 1
+  IsGlobalListener: 0
   PersistentKeywords: 0
---- !u!136 &1057394396
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057394392}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.31
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1001 &1211891724
 Prefab:
   m_ObjectHideFlags: 0
@@ -365,6 +353,27 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1211891724}
   m_Script: {fileID: 11500000, guid: 0decd33ba8702954885a62b5bc1a778e, type: 3}
+--- !u!1 &1566584088 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100096, guid: ff3dd417bb566b849b752ce57810bbf5, type: 2}
+  m_PrefabInternal: {fileID: 1602611329}
+--- !u!4 &1566584089 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400096, guid: ff3dd417bb566b849b752ce57810bbf5, type: 2}
+  m_PrefabInternal: {fileID: 1602611329}
+--- !u!136 &1566584090
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566584088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11
+  m_Height: 0.41
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.07}
 --- !u!1001 &1602611329
 Prefab:
   m_ObjectHideFlags: 0
@@ -411,10 +420,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff3dd417bb566b849b752ce57810bbf5, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1602611330 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400102, guid: ff3dd417bb566b849b752ce57810bbf5, type: 2}
-  m_PrefabInternal: {fileID: 1602611329}
 --- !u!1 &1733395277
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,11 +450,13 @@ MonoBehaviour:
   PersistentKeywords: 0
   RecognizerStart: 0
   Keywords:
-  - Keyword: Fire
-    KeyCode: 102
+  - Keyword: attack
+    KeyCode: 100
   - Keyword: Dracarys
     KeyCode: 100
-  recognitionConfidenceLevel: 1
+  - Keyword: Red
+    KeyCode: 114
+  recognitionConfidenceLevel: 0
 --- !u!4 &1733395279
 Transform:
   m_ObjectHideFlags: 0
@@ -611,7 +618,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1483284751
+  randomSeed: 999895009
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3877,14 +3884,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009548255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.168, z: 0.127}
-  m_LocalScale: {x: 1, y: 1, z: 0.40356818}
+  m_LocalRotation: {x: 0.8669895, y: -0, z: -0, w: 0.49832636}
+  m_LocalPosition: {x: 0, y: -0.145, z: 0.102}
+  m_LocalScale: {x: 1, y: 1, z: 0.4035682}
   m_Children:
   - {fileID: 1972203701}
-  m_Father: {fileID: 1602611330}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1566584089}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 30.221, y: 0, z: 0}
 --- !u!199 &2009548257
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -4001,7 +4008,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1291018601
+  randomSeed: -1648151267
   InitialModule:
     serializedVersion: 3
     enabled: 1
