@@ -7,6 +7,8 @@ public class Actions : MonoBehaviour {
     public GameObject flamesParticleEffect;
     private bool flamesActivated = false;
 
+    public AudioSource fireAudio;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,27 +26,22 @@ public class Actions : MonoBehaviour {
         {
             flamesParticleEffect.SetActive(false);
             flamesActivated = false;
+            if (fireAudio.isPlaying)
+            {
+                fireAudio.Stop();
+            }
         }
         else
         {
             flamesParticleEffect.SetActive(true);
             flamesActivated = true;
+            if (!fireAudio.isPlaying)
+            {
+                fireAudio.time = 3f;
+                fireAudio.Play();
+            }
         }
     }
 
     
-    public void DracarysAction()
-    {
-        Debug.Log("Dracarys Action");
-        if (flamesActivated)
-        {
-            flamesParticleEffect.SetActive(false);
-            flamesActivated = false;
-        }
-        else
-        {
-            flamesParticleEffect.SetActive(true);
-            flamesActivated = true;
-        }
-    }// end of DracarysAction
 }
